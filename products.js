@@ -2,7 +2,7 @@ const products = [
   {
     id: 1,
     name: "ساعت هوشمند Haino Teko Ultra 2 مدل مدل A2 با صفحه AMOLED و بدنه فلزی",
-    category: "1ساعت هوشمند",
+    category: "ساعت هوشمند",
     price: 4830000,
     rating: 4.9,
     featured: true,
