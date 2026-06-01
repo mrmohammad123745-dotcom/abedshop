@@ -342,3 +342,30 @@ function decreaseQuantity(id) {
   saveCart();
   renderCart();
 }
+function sendOrderToWhatsApp() {
+
+  if (cart.length === 0) {
+    alert("سبد خرید خالی است");
+    return;
+  }
+
+  let message = "🛒 سفارش جدید از سایت AbedShop\n\n";
+
+  cart.forEach(item => {
+    message += `📦 ${item.name}\n`;
+    message += `تعداد: ${item.quantity}\n`;
+    message += `قیمت: ${formatPrice(item.price)}\n\n`;
+  });
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  message += `💰 مبلغ کل: ${formatPrice(total)}`;
+
+  window.open(
+    `https://wa.me/989904438303?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+}
