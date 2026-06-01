@@ -161,7 +161,15 @@ function renderCart() {
         <img src="${item.image}" alt="${item.name}">
         <div>
           <div>${item.name}</div>
-          <small>${formatPrice(item.price)} × ${item.quantity}</small>
+          <div class="quantity-box">
+  <button class="qty-btn" onclick="decreaseQuantity(${item.id})">−</button>
+
+  <span class="qty-number">${item.quantity}</span>
+
+  <button class="qty-btn" onclick="increaseQuantity(${item.id})">+</button>
+</div>
+
+<small>${formatPrice(item.price)}</small>
         </div>
         <button class="remove-btn" onclick="removeFromCart(${item.id})">حذف</button>
       </div>
