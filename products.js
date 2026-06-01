@@ -93,7 +93,7 @@ const products = [
     id: 7,
     name: "ویدئو پروژکتور hy300",
     category: "لوازم دیجیتال",
-    price: 1490000,
+    price: 6570000,
     rating: 4.6,
     featured: false,
     badge: "گیمینگ",
@@ -102,13 +102,13 @@ const products = [
 "assets/images/product-7-2.jpg",
 "assets/images/product-7-3.jpg"
 ],
-    description: "ماوس گیمینگ حرفه‌ای با RGB و دقت بالا."
+    description: "با کیفیت Ultra HD و 4k کانکت شدن به گوشی با هر سیستم عاملی."
   },
   {
     id: 8,
     name: "اسپیکر گرامافون مدلWAVES",
     category: "گجت‌های کاربردی",
-    price: 1290000,
+    price: 2890000,
     rating: 4.4,
     featured: false,
     badge: "هوشمند",
@@ -117,13 +117,13 @@ const products = [
 "assets/images/product-8-2.jpg",
 "assets/images/product-8-3.jpg"
 ],
-    description: "چراغ هوشمند مدرن با کنترل اپلیکیشن."
+    description: "این دکوری شیک تلفیقی از گرامافون قدیمی و اسپیکر بلوتوثی جدید هست."
   },
   {
     id: 9,
     name: "شیکر نینجا مدل bc151",
     category: "ورزش و سفر",
-    price: 990000,
+    price: 6200000,
     rating: 4.2,
     featured: false,
     badge: "دسکتاپ",
@@ -132,13 +132,13 @@ const products = [
 "assets/images/product-9-2.jpg",
 "assets/images/product-9-3.jpg"
 ],
-    description: "استند لپ‌تاپ ارگونومیک با طراحی حرفه‌ای."
+    description: "اگه اهل باشگاهی، رژیم داری، سر کار وقت درست کردن وعده نداری یا دنبال یه نوشیدنی انرژی‌زا تو مسیر سفر و کمپینگی …."
   },
   {
     id: 10,
     name: "شارژر فندکی چندکاره و‌تاشو",
     category: "گجت‌های کاربردی",
-    price: 560000,
+    price: 2480000,
     rating: 4.3,
     featured: false,
     badge: "محبوب",
@@ -147,7 +147,7 @@ const products = [
 "assets/images/product-10-2.jpg",
 "assets/images/product-10-3.jpg"
 ],
-    description: "کاور مقاوم با طراحی خاص و لوکس."
+    description: "یه خوشبوکننده‌ی هوشمند داخل خود شارژره  بدون آب کار میکنه بو رو خیلی نرم و یکنواخت پخش میکنه."
   }
 
   // تا محصول 80 ادامه بده
