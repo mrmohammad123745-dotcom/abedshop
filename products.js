@@ -78,7 +78,7 @@ const products = [
     id: 6,
     name: "ماساژور قاعدگی مدل دودکمه اصلی",
     category: "سلامت و بانوان",
-    price: 900000,
+    price: 1400000,
     rating: 4.3,
     featured: false,
     badge: "پیشنهادی",
@@ -87,7 +87,7 @@ const products = [
 "assets/images/product-6-2.jpg",
 "assets/images/product-6-3.jpg"
 ],
-    description: "توضیحات"
+    description: "برای آسان گذشتن دوره دردناک قاعدگی  از ماساژور بانوان که حرارتی ویبریشن هست میتونید استفاده کنید"
   },
   {
     id: 7,
