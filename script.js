@@ -28,23 +28,26 @@ function renderProductCard(product) {
   return `
     <article class="product-card">
       <div class="product-image-wrap">
-        <img src="${product.image}" alt="${product.name}" class="product-image">
+        <img
+          class="product-image"
+          src="${product.images ? product.images[0] : product.image}"
+          alt="${product.name}">
         <span class="product-badge">${product.badge || "ویژه"}</span>
       </div>
+
       <div class="product-body">
         <span class="product-category">${product.category}</span>
         <h3 class="product-title">${product.name}</h3>
         <p class="product-desc">${product.description}</p>
+
         <div class="product-meta">
           <div class="price">${formatPrice(product.price)}</div>
           <div class="rating">★ ${product.rating}</div>
         </div>
+
         <div class="product-actions">
           <button class="add-btn" onclick="addToCart(${product.id})">افزودن به سبد</button>
-          <button class="detail-btn"
-onclick="viewProduct(${product.id})">
-جزئیات
-</button>
+          <button class="detail-btn" onclick="viewProduct(${product.id})">جزئیات</button>
         </div>
       </div>
     </article>
@@ -63,16 +66,12 @@ function populateCategories() {
   categoryFilter.innerHTML += categories.map(cat => `<option value="${cat}">${cat}</option>`).join("");
 
   const icons = {
-    "هدفون و هندزفری": "🎧",
-    "ساعت هوشمند": "⌚",
-    "اسپیکر": "🔊",
-    "پاوربانک": "🔋",
-    "شارژر و کابل": "🔌",
-    "لوازم جانبی موبایل": "📱",
-    "گیمینگ": "🎮",
-    "گجت هوشمند": "🧠",
-    "استند و هولدر": "🧷",
-    "تجهیزات دسکتاپ": "🖥️"
+    "گجت‌های کاربردی": "🔥",
+"لوازم دیجیتال": "📱",
+"سرمایشی و گرمایشی": "❄️",
+"زیبایی و مراقبت شخصی": "💄",
+"سلامت و بانوان": "💖",
+"ورزش و سفر": "🏋️"
   };
 
   categoryCardsContainer.innerHTML = categories.map(cat => `
@@ -143,6 +142,7 @@ function addToCart(id) {
 
   saveCart();
   renderCart();
+showToast("✅ محصول به سبد خرید اضافه شد");
   openCart();
 }
 
@@ -211,3 +211,76 @@ function viewProduct(id) {
 function viewProduct(id){
     window.location.href = `product.html?id=${id}`;
 }
+window.addEventListener("scroll", () => {
+
+const scrollTop =
+document.documentElement.scrollTop;
+
+const scrollHeight =
+document.documentElement.scrollHeight -
+document.documentElement.clientHeight;
+
+const percent =
+(scrollTop / scrollHeight) * 100;
+
+document.getElementById("progressBar")
+.style.width = percent + "%";
+
+});
+function showToast(message){
+
+const toast =
+document.getElementById("toast");
+
+toast.textContent = message;
+
+toast.classList.add("show");
+
+setTimeout(() => {
+toast.classList.remove("show");
+}, 2500);
+
+}
+document.addEventListener("mousemove",(e)=>{
+
+document.querySelectorAll(".product-card").forEach(card=>{
+
+const rect = card.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+const centerX = rect.width / 2;
+const centerY = rect.height / 2;
+
+const rotateY = (x - centerX) / 18;
+const rotateX = -(y - centerY) / 18;
+
+if(
+x >= 0 &&
+y >= 0 &&
+x <= rect.width &&
+y <= rect.height
+){
+
+card.style.transform =
+`perspective(1000px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-8px)`;
+
+}
+
+});
+
+});
+document.querySelectorAll(".product-card")
+.forEach(card=>{
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="";
+
+});
+
+});

@@ -119,6 +119,22 @@ grid-template-columns:1fr;
 </style>
 
 </head>
+<div class="sticky-buy-bar">
+
+<div class="sticky-price" id="stickyPrice">
+0 تومان
+</div>
+
+<a
+id="stickyWhatsapp"
+class="sticky-buy-btn"
+target="_blank">
+
+سفارش سریع
+
+</a>
+
+</div>
 <body>
 
 <div class="container product-page">
@@ -132,7 +148,15 @@ grid-template-columns:1fr;
 <div class="similar-grid" id="similarProducts"></div>
 
 </div>
+<div class="similar-products">
 
+<h2 style="margin-bottom:25px">
+اخیراً مشاهده کرده‌اید
+</h2>
+
+<div class="similar-grid" id="recentProducts"></div>
+
+</div>
 <div class="customer-box">
 
 <h2>نظرات مشتریان</h2>
@@ -148,7 +172,28 @@ grid-template-columns:1fr;
 </div>
 
 <script src="products.js"></script>
+const recentProducts =
+JSON.parse(
+localStorage.getItem("recentProducts")
+) || [];
 
+const recentItems = products.filter(p =>
+recentProducts.includes(p.id) &&
+p.id !== id
+);
+
+document.getElementById("recentProducts").innerHTML =
+recentItems.map(p => `
+
+<div class="similar-card">
+
+<img src="${p.image}">
+
+<h3>${p.name}</h3>
+
+</div>
+
+`).join("");
 <script>
 
 const params = new URLSearchParams(window.location.search);
@@ -164,7 +209,22 @@ document.getElementById("productContainer").innerHTML = `
 
 <div class="product-gallery">
 
-<img src="${product.image}" alt="${product.name}">
+<img
+id="mainImage"
+src="${product.images[0]}"
+alt="${product.name}">
+
+<div class="thumbs">
+
+${product.images.map(img => `
+
+<img
+src="${img}"
+onclick="changeImage('${img}')">
+
+`).join("")}
+
+</div>
 
 </div>
 
@@ -233,7 +293,13 @@ similar.map(p => `
 </div>
 
 `).join("");
+function changeImage(src){
 
+document
+.getElementById("mainImage")
+.src = src;
+
+}
 </script>
 
 </body>

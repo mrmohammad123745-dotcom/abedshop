@@ -331,6 +331,8 @@ img{
   transition:.35s;
   display:flex;
   flex-direction:column;
+transform-style:preserve-3d;
+will-change:transform;
 }
 
 .product-card:hover{
@@ -338,10 +340,8 @@ img{
 }
 
 .product-image-wrap{
-  height:240px;
   overflow:hidden;
-  position:relative;
-  background:#091224;
+  border-radius:24px;
 }
 
 .product-image{
@@ -682,4 +682,148 @@ img{
     min-height:auto;
     padding:110px 0 70px;
   }
+}
+#progressBar{
+position:fixed;
+top:0;
+right:0;
+width:0%;
+height:4px;
+background:linear-gradient(90deg,#d4af37,#f0d77a);
+z-index:99999;
+transition:width .1s linear;
+}
+.toast{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#0f1d3a;
+color:#fff;
+padding:15px 20px;
+border-radius:15px;
+border:1px solid rgba(212,175,55,.3);
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+opacity:0;
+transform:translateY(20px);
+transition:.3s;
+z-index:99999;
+pointer-events:none;
+}
+
+.toast.show{
+opacity:1;
+transform:translateY(0);
+}
+.sticky-buy-bar{
+
+position:fixed;
+
+bottom:0;
+
+right:0;
+
+left:0;
+
+height:75px;
+
+background:rgba(7,18,36,.95);
+
+backdrop-filter:blur(15px);
+
+border-top:1px solid rgba(212,175,55,.25);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 20px;
+
+z-index:9999;
+
+}
+
+.sticky-price{
+
+font-size:22px;
+
+font-weight:800;
+
+color:#d4af37;
+
+}
+
+.sticky-buy-btn{
+
+background:linear-gradient(
+135deg,
+#f0d77a,
+#d4af37
+);
+
+color:#111;
+
+padding:12px 25px;
+
+border-radius:12px;
+
+font-weight:800;
+
+}
+.thumbs{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+}
+
+.thumbs{
+display:flex;
+gap:10px;
+margin-top:15px;
+justify-content:center;
+}
+
+.thumbs img{
+width:60px;
+height:60px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+border:2px solid rgba(255,255,255,.1);
+transition:.3s;
+background:#0f1d3a;
+}
+
+.thumbs img:hover{
+border-color:#d4af37;
+transform:scale(1.08);
+
+
+}
+
+.thumbs img:hover{
+
+border-color:#d4af37;
+
+transform:translateY(-3px);
+
+}
+.thumbs img{
+width:60px !important;
+height:60px !important;
+object-fit:cover;
+border-radius:8px;
+}
+.product-image{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
 }
