@@ -318,3 +318,27 @@ function sendOrderToWhatsApp() {
     "_blank"
   );
 }
+function increaseQuantity(id) {
+  const item = cart.find(item => item.id === id);
+
+  if (item) {
+    item.quantity++;
+    saveCart();
+    renderCart();
+  }
+}
+
+function decreaseQuantity(id) {
+  const item = cart.find(item => item.id === id);
+
+  if (!item) return;
+
+  if (item.quantity > 1) {
+    item.quantity--;
+  } else {
+    cart = cart.filter(p => p.id !== id);
+  }
+
+  saveCart();
+  renderCart();
+}
