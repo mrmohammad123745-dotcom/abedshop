@@ -827,3 +827,27 @@ border-radius:8px;
   object-fit:cover;
   display:block;
 }
+.quantity-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:8px;
+}
+
+.qty-btn{
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#FFD700,#D4AF37);
+  color:#111;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.qty-number{
+  min-width:30px;
+  text-align:center;
+  font-weight:700;
+}
