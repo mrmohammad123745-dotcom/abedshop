@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوکس گجت | فروشگاه حرفه‌ای گجت</title>
+  <meta name="description" content="فروشگاه لوکس گجت با طراحی حرفه‌ای، دسته‌بندی کامل محصولات و تجربه خرید مدرن" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progressBar"></div>
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">abedshop</a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero">خانه</a>
+        <a href="#categories">دسته‌بندی</a>
+        <a href="#featured">پرفروش‌ها</a>
+        <a href="#products">محصولات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-btn" id="goProducts">جستجو</button>
+        <button class="cart-btn" id="cartToggle">
+          سبد خرید
+          <span id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="badge">فروشگاه لوکس گجت</span>
+        <h1>دنیای گجت‌های خاص با طراحی لوکس و مدرن</h1>
+        <p>
+          مجموعه‌ای از بهترین گجت‌ها، لوازم جانبی و محصولات دیجیتال
+          با چیدمان حرفه‌ای، دسته‌بندی کامل و تجربه خرید جذاب.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-gold">مشاهده محصولات</a>
+          <a href="#featured" class="btn btn-outline">پرفروش‌ترین‌ها</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-stat">
+          <strong>80+</strong>
+          <span>محصول متنوع</span>
+        </div>
+        <div class="hero-stat">
+          <strong>10</strong>
+          <span>دسته‌بندی اصلی</span>
+        </div>
+        <div class="hero-stat">
+          <strong>3</strong>
+          <span>محصول ویژه پرفروش</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">دسته‌بندی‌ها</span>
+        <h2>مرور سریع محصولات</h2>
+        <p>محصولات را براساس دسته‌بندی موردنظر خود پیدا کنید.</p>
+      </div>
+      <div class="categories-grid" id="categoryCards"></div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="featured">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">پرفروش‌ها</span>
+        <h2>۳ محصول منتخب و پرفروش</h2>
+        <p>منتخب محصولات ویژه‌ای که بیشترین محبوبیت را دارند.</p>
+      </div>
+      <div class="products-grid featured-grid" id="featuredProducts"></div>
+    </div>
+  </section>
+
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">محصولات</span>
+        <h2>همه محصولات فروشگاه</h2>
+        <p>جستجو، فیلتر و مرتب‌سازی بین ۸۰ محصول</p>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" id="searchInput" placeholder="جستجو در نام، توضیح یا دسته‌بندی..." />
+        <select id="categoryFilter">
+          <option value="all">همه دسته‌بندی‌ها</option>
+        </select>
+        <select id="sortFilter">
+          <option value="default">مرتب‌سازی</option>
+          <option value="cheap">ارزان‌ترین</option>
+          <option value="expensive">گران‌ترین</option>
+          <option value="rating">بیشترین امتیاز</option>
+        </select>
+      </div>
+
+      <div class="products-grid" id="allProducts"></div>
+      <div id="emptyState" class="empty-state" hidden>محصولی پیدا نشد.</div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="about">
+    <div class="container about-grid">
+      <div>
+        <span class="section-label">درباره ما</span>
+        <h2>فروشگاهی برای مخاطبان حرفه‌ای و خاص‌پسند</h2>
+        <p>
+          ما مجموعه‌ای از گجت‌های کاربردی، خاص و لوکس را در یک فروشگاه حرفه‌ای
+          گردآوری کرده‌ایم تا تجربه‌ای مدرن، ساده و جذاب برای خرید آنلاین ایجاد کنیم.
+        </p>
+      </div>
+      <div class="about-card">
+        <div class="about-item">
+          <strong>ارسال سریع به سراسر کشور</strong>
+          <span>سفارش شما در کوتاه‌ترین زمان ممکن ارسال می‌شود.</span>
+        </div>
+        <div class="about-item">
+          <strong>تضمین کیفیت و اصالت کالا</strong>
+          <span>تمام محصولات با بررسی کیفیت و ضمانت اصالت ارائه می‌شوند.</span>
+        </div>
+        <div class="about-item">
+          <strong>پشتیبانی قبل و بعد از خرید</strong>
+          <span>در تمام مراحل خرید کنار شما هستیم.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">تماس با ما</span>
+        <h2>با ما در ارتباط باشید</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>اطلاعات تماس</h3>
+          <p>واتساپ: 09904438303</p>
+          <p>اینستاگرام: https://www.instagram.com/abedshop_ir?igsh=bndkcGUwbzR6bTQw</p>
+          <p>آدرس: قشم هلر</p>
+        </div>
+
+        <form class="contact-form">
+          <input type="text" placeholder="نام شما">
+          <input type="email" placeholder="ایمیل شما">
+          <textarea rows="5" placeholder="پیام شما"></textarea>
+          <button type="button" class="btn btn-gold">ارسال پیام</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <p>© تمامی حقوق برای LuxGadget محفوظ است.</p>
+      <div class="footer-links">
+        <a href="#hero">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس</a>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>سبد خرید</h3>
+      <button id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>مجموع:</span>
+        <strong id="cartTotal">0 تومان</strong>
+      </div>
+      <button
+class="btn btn-gold full-btn"
+onclick="sendOrderToWhatsApp()">
+ادامه خرید
+</button>
+    </div>
+  </aside>
+
+  <div class="backdrop" id="backdrop"></div>
+<div id="toast" class="toast">
+✅ محصول به سبد خرید اضافه شد
+</div>
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
