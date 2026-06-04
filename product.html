@@ -17,17 +17,31 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:40px;
-    background:#0f1d3a;
-    border:1px solid rgba(212,175,55,.2);
+    background:#0a0a0a;
+    border:2px solid #d4af37;
+box-shadow:0 0 20px rgba(212,175,55,.25);
     border-radius:25px;
     padding:30px;
 }
 
-.product-gallery img{
+#mainImage{
     width:100%;
     border-radius:20px;
 }
+.thumbs{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
 
+.thumbs img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border:2px solid #d4af37;
+    border-radius:12px;
+    cursor:pointer;
+}
 .product-info h1{
     margin-bottom:15px;
 }
@@ -55,8 +69,8 @@
 .whatsapp-btn{
     display:inline-block;
     padding:15px 30px;
-    background:#25D366;
-    color:#fff;
+    background:#d4af37;
+    color:#000;
     border-radius:15px;
     font-weight:bold;
 }
@@ -64,7 +78,7 @@
 .back-btn{
     display:inline-block;
     margin-top:15px;
-    color:#fff;
+    color:#d4af37;
 }
 
 .similar-products{
@@ -78,7 +92,7 @@
 }
 
 .similar-card{
-    background:#0f1d3a;
+    background:#0a0a0a;
     border-radius:20px;
     overflow:hidden;
 }
@@ -95,7 +109,7 @@
 
 .customer-box{
     margin-top:60px;
-    background:#0f1d3a;
+    background:#0a0a0a;
     padding:25px;
     border-radius:20px;
 }
