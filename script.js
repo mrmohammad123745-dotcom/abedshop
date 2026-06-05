@@ -21,7 +21,7 @@ const backdrop = document.getElementById("backdrop");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function formatPrice(price) {
-  return price.toLocaleString("fa-IR") + " تومان";
+  return price.toLocaleString("en-US") + " تومان";
 }
 
 function renderProductCard(product) {
@@ -118,7 +118,7 @@ function getFilteredProducts() {
   } else if (sort === "rating") {
     filtered.sort((a, b) => b.rating - a.rating);
   }
-
+filtered.sort(() => Math.random() - 0.5);
   return filtered;
 }
 
@@ -252,50 +252,8 @@ toast.classList.remove("show");
 }, 2500);
 
 }
-document.addEventListener("mousemove",(e)=>{
 
-document.querySelectorAll(".product-card").forEach(card=>{
-
-const rect = card.getBoundingClientRect();
-
-const x = e.clientX - rect.left;
-const y = e.clientY - rect.top;
-
-const centerX = rect.width / 2;
-const centerY = rect.height / 2;
-
-const rotateY = (x - centerX) / 18;
-const rotateX = -(y - centerY) / 18;
-
-if(
-x >= 0 &&
-y >= 0 &&
-x <= rect.width &&
-y <= rect.height
-){
-
-card.style.transform =
-`perspective(1000px)
-rotateX(${rotateX}deg)
-rotateY(${rotateY}deg)
-translateY(-8px)`;
-
-}
-
-});
-
-});
-document.querySelectorAll(".product-card")
-.forEach(card=>{
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="";
-
-});
-
-});
-function sendOrderToWhatsApp() {
+function sendOrderToWhatsApp() {ب
 
   if (cart.length === 0) {
     alert("سبد خرید خالی است");
